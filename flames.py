@@ -10,6 +10,7 @@ def name_or_not():
             name = input("Name Again:").lower()
     return name
 
+#Input of name
 name1 = [i for i in name_or_not()]
 name2 = [i for i in name_or_not()]
 
@@ -29,19 +30,19 @@ final_count = len(name1+name2)
 
 flames = 'F L A M E S'.split()
 
+#Logic for Striking out the letters
 while len(flames)>1:
     calcu = final_count % len(flames)
     remove_count = calcu -1
-    #print(remove_count)
+    #Spliting the list into two and joining it in a reverse oder
     if remove_count >= 0:
         right_list = flames[remove_count + 1:]
         left_list = flames[:remove_count]
-        flames = left_list + right_list
-        #print(flames)
+        flames = right_list + left_list
     else:
         flames = flames[:len(flames)-1]
-        #print(flames)
 
+#Dictionary to display the output
 out_dict = {
     'F' : 'Friends',
     'L' : 'Love',
