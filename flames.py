@@ -1,18 +1,21 @@
 #To Get name input and validate the input
+
+# Changes made:
+# Instead of using a seperate variable to for checking the validity of the name, 
+# you can just use the while loop more efficiently
 def name_or_not():
     name = input("Name :").lower()
-    NameAlph = False
-    while NameAlph == False:
-        if name.isalpha():
-            NameAlph = True
-        else:
-            print("PLease enter only Alphabets")
-            name = input("Name Again:").lower()
+    while not name.isalpha():
+        print("Please enter only alphabets")
+        name = input("Name Again:").lower()
     return name
 
 #Input of name
-name1 = [i for i in name_or_not()]
-name2 = [i for i in name_or_not()]
+
+# Changes made:
+# Instead of using a list comprehension, you can make use of the list() function
+name1 = list(name_or_not())
+name2 = list(name_or_not())
 
 #removing the repeated leaters in the names.
 remov = []
